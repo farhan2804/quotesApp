@@ -6,7 +6,7 @@ import IMAGE5 from "./assets/Images/5.jpg";
 
 const quotesData = [
   "Jab aap kisi Cheez se Dur Bhaagte Ho, toh ye Duniya bhi choti lagne lagti hai",
-  "The way to get started is to quit talking and begin doing. - Walt Disney",
+  "Insaan ko apna ghum sirf tab tak bara lagta hain, jab tak wo dusron ka ghum na dekh le",
   "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
   "The way to get started is to quit talking and begin doing. - Walt Disney",
   "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
