@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { quotesData, quotesImages } from "./quotesData";
 import QuotesDisplay from "./Components/QuotesDisplay";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./App.css";
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -19,7 +18,7 @@ const App = () => {
   return (
     <>
       <div className="appContainer">
-        <LazyLoadImage
+        <img
           alt={`Background for quote ${index}`}
           src={backgroundImage}
           effect="blur"
