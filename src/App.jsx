@@ -23,6 +23,7 @@ const App = () => {
           alt={`Background for quote ${index}`}
           src={backgroundImage}
           effect="blur"
+          loading="lazy"
           className="backgroundImage"
         />
         <QuotesDisplay
