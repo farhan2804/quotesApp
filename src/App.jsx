@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { quotesData, quotesImages } from "./quotesData";
-import QuotesDisplay from "./Components/QuotesDisplay";
+import QuotesDisplay from "./Components/QuotesDsiplay/QuotesDisplay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./App.css";
 const App = () => {
