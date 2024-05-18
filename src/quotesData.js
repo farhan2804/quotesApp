@@ -7,7 +7,7 @@ import IMAGE5 from "./assets/Images/5.jpg";
 const quotesData = [
   "Jab aap kisi Cheez se Dur Bhaagte Ho, toh ye Duniya bhi chhoti lagne lagti hai.....",
   "Insaan ko apna ghum sirf tab tak bara lagta hain, jab tak wo dusron ka ghum na dekh le.....",
-  "Sabr karna mushkil tab hota hain, jab aazmaaishey lambi ho jaayein.....",
+  "Sabr karna mushkil tab ho jaata hain, jab aazmaaishey lambi ho jaayein.....",
   "To win any battle, first, you need to stay on the battlefield, otherwise, you are already out of it.....",
   "Aap kamzor nahi hai, shaayad duniya hi kuch zyaada zaalim hain.....",
 ];
