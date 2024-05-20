@@ -7,6 +7,7 @@
   border-radius: 50%; /* This makes the div a circle */
   background: conic-gradient(red, orange, yellow, green, blue, indigo, violet);
   cursor: pointer; /* Optional: makes the circle look clickable */
+  margin-bottom:20px;
 }
 
 

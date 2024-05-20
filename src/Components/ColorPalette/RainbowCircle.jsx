@@ -6,10 +6,10 @@ const colors = [
   "rgba(117, 21, 243, 0.656)", // Semi-transparent green
   "rgba(241, 84, 152, 0.656)", // Semi-transparent blue
   "rgba(152, 0, 39, 0.652)", // Semi-transparent yellow
-  "rgba(0, 210, 220, 0.6)", // Semi-transparent cyan
+  "rgba(0, 190, 200, 0.6)", // Semi-transparent cyan
   "rgba(170, 0,165, 0.6)", // Semi-transparent magenta
   "rgba(128, 0, 128, 0.6)", // Semi-transparent purple
-  "rgba(255, 165, 0, 0.6)", // Semi-transparent orange
+  "rgba(213, 165, 0, 0.6)", // Semi-transparent orange
   "rgba(0, 128, 128, 0.6)", // Semi-transparent teal
   "rgba(128, 128, 128, 0.6)", // Semi-transparent grey
 ];

@@ -6,11 +6,20 @@ import "./Head.css";
 import { toPng } from "html-to-image";
 const Head = () => {
   const [index, setIndex] = useState(0);
+  const [isRainbowVisible, setisRainbowVisible] = useState(true);
+  const [createActive, isCreateActive] = useState(false);
+  const [hideButtons,setHideButtons]=useState(false);
   const handleNext = () => {
     setIndex(index + 1);
+    isCreateActive(false);
   };
   const handlePrev = () => {
     setIndex(index - 1);
+    isCreateActive(false);
+  };
+
+  const handleEdit = () => {
+    isCreateActive(true);
   };
   function downloadImage(dataUrl) {
     const link = document.createElement("a");
@@ -21,10 +30,23 @@ const Head = () => {
 
   const captureAndDownload = () => {
     const headContainer = document.querySelector(".HeadContainer");
-    // console.log("appContainer:", appContainer);
+    setHideButtons(true);
+    setisRainbowVisible(false);
+    isCreateActive(false);
+    // Capture the image
     toPng(headContainer, {
-      backgroundImage: quotesImages[index], // Adjust background color if needed
-    }).then(downloadImage);
+      backgroundImage: quotesImages[index],
+    })
+      .then((dataUrl) => {
+        downloadImage(dataUrl);
+        setisRainbowVisible(true);
+        isCreateActive(false);
+        setHideButtons(false);
+      })
+      .catch((error) => {
+        console.error("Error capturing image: ", error);
+        setisRainbowVisible(true);
+      });
   };
 
   const nextDisabled = index === quotesData.length - 1;
@@ -47,10 +69,16 @@ const Head = () => {
           onPrevious={handlePrev}
           prevIndex={prevDisabled}
           nextIndex={nextDisabled}
+          isRainbowVisible={isRainbowVisible}
+          createActive={createActive}
+          hide={hideButtons}
         />
       </div>
       <button className="download-button" onClick={captureAndDownload}>
         Download
+      </button>
+      <button onClick={handleEdit} className="create-button">
+        Create your own Quote
       </button>
     </>
   );
