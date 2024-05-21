@@ -48,7 +48,7 @@
   @media(max-width:500px){
     .Loader-container{
       position:absolute;
-      top:65%;
+      top:70%;
       left:42%;
     }
   }
