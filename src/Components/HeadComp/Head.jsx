@@ -2,13 +2,22 @@ import React, { useState } from "react";
 import { quotesData, quotesImages } from "../../quotesData";
 import QuotesDisplay from "../QuotesDsiplay/QuotesDisplay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { FadeLoader } from "react-spinners";
 import "./Head.css";
 import { toPng } from "html-to-image";
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 const Head = () => {
   const [index, setIndex] = useState(0);
   const [isRainbowVisible, setisRainbowVisible] = useState(true);
+  const [isFontVisible, setIsFontvisible] = useState(true);
   const [createActive, isCreateActive] = useState(false);
-  const [hideButtons,setHideButtons]=useState(false);
+  const [hideButtons, setHideButtons] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  let [color, setColor] = useState("white");
   const handleNext = () => {
     setIndex(index + 1);
     isCreateActive(false);
@@ -32,7 +41,9 @@ const Head = () => {
     const headContainer = document.querySelector(".HeadContainer");
     setHideButtons(true);
     setisRainbowVisible(false);
+    setIsFontvisible(false);
     isCreateActive(false);
+    setIsLoading(true);
     // Capture the image
     toPng(headContainer, {
       backgroundImage: quotesImages[index],
@@ -40,8 +51,10 @@ const Head = () => {
       .then((dataUrl) => {
         downloadImage(dataUrl);
         setisRainbowVisible(true);
+        setIsFontvisible(true);
         isCreateActive(false);
         setHideButtons(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error capturing image: ", error);
@@ -70,8 +83,20 @@ const Head = () => {
           prevIndex={prevDisabled}
           nextIndex={nextDisabled}
           isRainbowVisible={isRainbowVisible}
+          isFontVisible={isFontVisible}
           createActive={createActive}
           hide={hideButtons}
+          isLoading={isLoading}
+        />
+      </div>
+      <div className="Loader-container">
+        <FadeLoader
+          loading={isLoading}
+          size={100}
+          color={color}
+          cssOverride={override}
+          aria-label="Loading Spinner"
+          data-testid="loader"
         />
       </div>
       <button className="download-button" onClick={captureAndDownload}>

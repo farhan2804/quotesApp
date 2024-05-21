@@ -31,3 +31,10 @@
     margin-bottom:50px;
 
   }
+
+  .Loader-container{
+    position:absolute;
+    top:58%;
+    left:48%;
+  }
+

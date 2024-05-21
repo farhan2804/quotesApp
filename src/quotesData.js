@@ -11,7 +11,7 @@ const quotesData = [
   "Sabr karna mushkil tab ho jaata hain, jab aazmaaishey lambi ho jaayein",
   "To win any battle, first, you need to stay on the battlefield, otherwise, you are already out of it",
   "Aap kamzor nahi hai, shaayad duniya hi kuch zyaada zaalim hain",
-  "Tumhe to khush hona chahye,yaad karo tm hi to kaha karte the ' ALLAH mujhe sirf tera mohtaaj banana '"
+  "Tumhe to khush hona chahye,yaad karo tm hi to kaha karte the,ALLAH mujhe sirf tera mohtaaj banana",
 ];
 const quotesImages = [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5,IMAGE6];
 export { quotesData, quotesImages };

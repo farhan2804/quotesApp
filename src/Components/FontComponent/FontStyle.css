@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Comic+Neue:wght@300;400;700&family=Patrick+Hand&family=Amatic+SC:wght@400;700&family=Pacifico&family=Lobster&family=Indie+Flower&family=Permanent+Marker&family=Fredoka+One&family=Bangers&family=Chewy&family=Gloria+Hallelujah&family=Baloo+2:wght@400;700&family=Caveat:wght@400;700&family=Shadows+Into+Light&family=Great+Vibes&family=Satisfy&family=Dancing+Script&family=Anton:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&family=Indie+Flower&family=Permanent+Marker&family=Fredoka+One&family=Bangers&family=Amatic+SC:wght@400;700&family=Chewy&family=Gloria+Hallelujah&family=Baloo+2:wght@400;700&family=Caveat:wght@400;700&family=Shadows+Into+Light&family=Great+Vibes&family=Satisfy&family=Dancing+Script&family=Anton:wght@400;700&display=swap');
+
+.font-image {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+}
+
+.fonts {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #222640ed;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.font {
+  width: auto;
+  height: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #39427bed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+@media (max-width: 468px) {
+  .font {
+    font-size: 10px;
+  }
+}
+
+.comic {
+  font-family: "Comic Sans MS", cursive;
+}
+
+.kalam {
+  font-family: "Kalam", cursive;
+}
+
+.comic-neue {
+  font-family: "Comic Neue", cursive;
+}
+
+.patrick-hand {
+  font-family: "Patrick Hand", cursive;
+}
+
+.amatic {
+  font-family: "Amatic SC", cursive;
+}
+
+.pacifico {
+  font-family: "Pacifico", cursive;
+}
+
+.lobster {
+  font-family: "Lobster", cursive;
+}
+
+.indie-flower {
+  font-family: "Indie Flower", cursive;
+}
+
+.marker {
+  font-family: "Permanent Marker", cursive;
+}
+
+.fredoka {
+  font-family: "Fredoka One", cursive;
+}
+
+.bangers {
+  font-family: "Bangers", cursive;
+}
+
+.chewy {
+  font-family: "Chewy", cursive;
+}
+
+.gloria {
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.baloo {
+  font-family: "Baloo 2", cursive;
+}
+
+.caveat {
+  font-family: "Caveat", cursive;
+}
+
+.shadows {
+  font-family: "Shadows Into Light", cursive;
+}
+
+.great-vibes {
+  font-family: "Great Vibes", cursive;
+}
+
+.satisfy {
+  font-family: "Satisfy", cursive;
+}
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+}
+
+.anton {
+  font-family: "Anton", sans-serif;
+  font-weight: bold;
+}
+@media (max-width: 325px) {
+  .font {
+    font-size: 6px;
+  }
+}
+
+

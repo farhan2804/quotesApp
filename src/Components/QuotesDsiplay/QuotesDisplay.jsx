@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./QuotesDisplay.css";
 import RainbowCircle from "../ColorPalette/RainbowCircle";
-
+import FontStyle from "../FontComponent/FontStyle";
 const QuotesDisplay = ({
   quote,
   onNext,
@@ -11,14 +11,18 @@ const QuotesDisplay = ({
   isRainbowVisible,
   createActive,
   hide,
+  isFontVisible,
+  isLoading,
 }) => {
   const [choice, setChoice] = useState("rgba(0, 0, 0, 0.6)");
   const [isOpen, setIsOpen] = useState(false);
+  const [isFontOpen, setIsFontOpen] = useState(false);
   const [isInputHidden, setIsInputHidden] = useState(false);
   const [originalQuote, setOriginalQuote] = useState(quote);
   const [editedQuote, setEditedQuote] = useState("");
   const [editing, setEditing] = useState(createActive);
-  // Update currentQuote state whenever the quote prop changes
+  const [selectedFont, setSelectedFont] = useState("Arial");
+  const [errorData, setErrorData] = useState("");
   useEffect(() => {
     setOriginalQuote(quote);
     setEditing(createActive);
@@ -39,7 +43,22 @@ const QuotesDisplay = ({
   };
 
   const togglePalette = () => {
+    if (!isOpen) {
+      setIsFontOpen(false);
+    }
     setIsOpen(!isOpen);
+  };
+
+  const toggleFont = () => {
+    if (!isFontOpen) {
+      setIsOpen(false);
+    }
+    setIsFontOpen(!isFontOpen);
+  };
+
+  const changeFont = (font) => {
+    setSelectedFont(font);
+    setIsFontOpen(false);
   };
 
   return (
@@ -53,15 +72,38 @@ const QuotesDisplay = ({
             isOpen={isOpen}
           />
         )}
-        {editing ? (
-          <input
-            className="userInput"
-            type="text"
-            value={editedQuote}
-            onChange={(e) => setEditedQuote(e.target.value)}
+        {isFontVisible && (
+          <FontStyle
+            toggleFont={toggleFont}
+            isFontOpen={isFontOpen}
+            changeFont={changeFont}
           />
+        )}
+
+        {editing ? (
+          <>
+            <input
+              className="userInput"
+              type="text"
+              value={editedQuote}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value.trim().length > 100) {
+                  setErrorData(
+                    "Input exceeds the maximum length of 100 characters!!!"
+                  );
+                } else {
+                  setErrorData(""); // Clear the error message
+                  setEditedQuote(value);
+                }
+              }}
+            />
+            <p className="error">{errorData}</p>
+          </>
         ) : (
-          <p className="quote">{originalQuote}</p>
+          <p className="quote" style={{ fontFamily: selectedFont }}>
+            {originalQuote}
+          </p>
         )}
         <div className="button-container">
           {!hide && (
@@ -69,13 +111,11 @@ const QuotesDisplay = ({
               Previous
             </button>
           )}
-
           {!hide && (
             <button onClick={onNext} disabled={nextIndex}>
               Next
             </button>
           )}
-
           {createActive && !isInputHidden && (
             <button onClick={handleEdit}>{editing ? "Save" : "Edit"}</button>
           )}

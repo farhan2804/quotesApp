@@ -10,8 +10,8 @@
 .quote {
   font-size: 1.5em;
   margin-bottom: 20px;
-  text-align:center;
-  margin-top:10px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .button-container {
@@ -34,6 +34,10 @@ button:disabled {
   background-color: #4b853e;
   cursor: not-allowed;
 }
+.error {
+  margin-bottom: 10px;
+  color:#9787e1cc;
+}
 
 .userInput {
   width: 100%;
@@ -45,9 +49,35 @@ button:disabled {
 @media (max-width: 360px) {
   .quote-container {
     padding: 20px;
-    width:250px;
+    width: 250px;
   }
-  button{
-    font-size:12px;
+  button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 443px) {
+  .quote {
+    font-size: 0.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .quote {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quote {
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
   }
 }
