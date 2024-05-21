@@ -116,7 +116,7 @@ const Head = () => {
           flexDirection: "column",
           position:  "absolute",
           gap: "10px",
-          top: isOpen || isFontOpen ? "85%" : "70%",
+          top: isOpen || isFontOpen ? "85%" : "75%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
