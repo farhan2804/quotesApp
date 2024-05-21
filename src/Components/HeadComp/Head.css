@@ -34,7 +34,23 @@
 
   .Loader-container{
     position:absolute;
-    top:58%;
+    top:60%;
     left:48%;
   }
+
+  @media(max-width:1000px){
+    .Loader-container{
+      position:absolute;
+      top:65%;
+      left:48%;
+    }
+  }
+  @media(max-width:500px){
+    .Loader-container{
+      position:absolute;
+      top:65%;
+      left:42%;
+    }
+  }
+
 
