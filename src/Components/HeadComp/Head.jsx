@@ -1,35 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { quotesData, quotesImages } from "../../quotesData";
 import QuotesDisplay from "../QuotesDsiplay/QuotesDisplay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FadeLoader } from "react-spinners";
 import "./Head.css";
 import { toPng } from "html-to-image";
+
 const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
 };
+
 const Head = () => {
   const [index, setIndex] = useState(0);
-  const [isRainbowVisible, setisRainbowVisible] = useState(true);
-  const [isFontVisible, setIsFontvisible] = useState(true);
-  const [createActive, isCreateActive] = useState(false);
+  const [isRainbowVisible, setIsRainbowVisible] = useState(true);
+  const [isFontVisible, setIsFontVisible] = useState(true);
+  const [createActive, setCreateActive] = useState(false);
   const [hideButtons, setHideButtons] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  let [color, setColor] = useState("white");
+  let [color, setColor] = useState("red");
+  const [isOpen, setIsOpen] = useState(false);
+  const [isFontOpen, setIsFontOpen] = useState(false);
+
   const handleNext = () => {
     setIndex(index + 1);
-    isCreateActive(false);
+    setCreateActive(false);
   };
+
   const handlePrev = () => {
     setIndex(index - 1);
-    isCreateActive(false);
+    setCreateActive(false);
   };
 
   const handleEdit = () => {
-    isCreateActive(true);
+    setCreateActive(true);
   };
+
   function downloadImage(dataUrl) {
     const link = document.createElement("a");
     link.href = dataUrl;
@@ -40,25 +47,24 @@ const Head = () => {
   const captureAndDownload = () => {
     const headContainer = document.querySelector(".HeadContainer");
     setHideButtons(true);
-    setisRainbowVisible(false);
-    setIsFontvisible(false);
-    isCreateActive(false);
+    setIsRainbowVisible(false);
+    setIsFontVisible(false);
+    setCreateActive(false);
     setIsLoading(true);
-    // Capture the image
     toPng(headContainer, {
       backgroundImage: quotesImages[index],
     })
       .then((dataUrl) => {
         downloadImage(dataUrl);
-        setisRainbowVisible(true);
-        setIsFontvisible(true);
-        isCreateActive(false);
+        setIsRainbowVisible(true);
+        setIsFontVisible(true);
+        setCreateActive(false);
         setHideButtons(false);
         setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error capturing image: ", error);
-        setisRainbowVisible(true);
+        setIsRainbowVisible(true);
       });
   };
 
@@ -87,24 +93,41 @@ const Head = () => {
           createActive={createActive}
           hide={hideButtons}
           isLoading={isLoading}
+          isOpen={isOpen}
+          isFontOpen={isFontOpen}
+          setIsOpen={setIsOpen}
+          setIsFontOpen={setIsFontOpen}
         />
       </div>
       <div className="Loader-container">
         <FadeLoader
           loading={isLoading}
-          size={100}
+          size={50}
           color={color}
           cssOverride={override}
           aria-label="Loading Spinner"
           data-testid="loader"
         />
       </div>
-      <button className="download-button" onClick={captureAndDownload}>
-        Download
-      </button>
-      <button onClick={handleEdit} className="create-button">
-        Create your own Quote
-      </button>
+      <div
+        className="button-cont"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          position:  "absolute",
+          gap: "10px",
+          top: isOpen || isFontOpen ? "85%" : "70%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <button className="download-button" onClick={captureAndDownload}>
+          Download
+        </button>
+        <button onClick={handleEdit} className="create-button">
+          Create your own Quote
+        </button>
+      </div>
     </>
   );
 };

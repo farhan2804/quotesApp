@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./QuotesDisplay.css";
 import RainbowCircle from "../ColorPalette/RainbowCircle";
 import FontStyle from "../FontComponent/FontStyle";
+
 const QuotesDisplay = ({
   quote,
   onNext,
@@ -13,16 +14,18 @@ const QuotesDisplay = ({
   hide,
   isFontVisible,
   isLoading,
+  isOpen,
+  isFontOpen,
+  setIsOpen,
+  setIsFontOpen,
 }) => {
   const [choice, setChoice] = useState("rgba(0, 0, 0, 0.6)");
-  const [isOpen, setIsOpen] = useState(false);
-  const [isFontOpen, setIsFontOpen] = useState(false);
-  const [isInputHidden, setIsInputHidden] = useState(false);
   const [originalQuote, setOriginalQuote] = useState(quote);
   const [editedQuote, setEditedQuote] = useState("");
   const [editing, setEditing] = useState(createActive);
   const [selectedFont, setSelectedFont] = useState("Arial");
   const [errorData, setErrorData] = useState("");
+
   useEffect(() => {
     setOriginalQuote(quote);
     setEditing(createActive);
@@ -116,7 +119,7 @@ const QuotesDisplay = ({
               Next
             </button>
           )}
-          {createActive && !isInputHidden && (
+          {createActive && (
             <button onClick={handleEdit}>{editing ? "Save" : "Edit"}</button>
           )}
         </div>
