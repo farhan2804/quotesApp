@@ -5,6 +5,8 @@
   margin: 20px;
   color: white;
   transition: background-color 0.3s ease;
+  overflow: hidden; /* Hide overflowing content */
+  word-wrap: break-word;
 }
 
 .quote {

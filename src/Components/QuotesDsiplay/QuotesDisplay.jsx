@@ -91,7 +91,7 @@ const QuotesDisplay = ({
               value={editedQuote}
               onChange={(e) => {
                 const value = e.target.value;
-                if (value.trim().length > 100) {
+                if (value.length > 100) {
                   setErrorData(
                     "Input exceeds the maximum length of 100 characters!!!"
                   );
