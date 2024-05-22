@@ -114,7 +114,7 @@ const Head = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          position:  "absolute",
+          position: "absolute",
           gap: "10px",
           top: isOpen || isFontOpen ? "85%" : "75%",
           left: "50%",
@@ -128,6 +128,9 @@ const Head = () => {
           Create your own Quote
         </button>
       </div>
+      <h4 className="copyright" style={{ color: "whitesmoke" }}>
+        &copy; Farhan
+      </h4>
     </>
   );
 };

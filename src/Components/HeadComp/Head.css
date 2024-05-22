@@ -18,6 +18,11 @@
   z-index: -1;
 }
 
+.copyright{
+  position:absolute;
+  bottom:3px;
+  right:6px;
+}
 .Loader-container {
   position: absolute;
   top: 50%;
