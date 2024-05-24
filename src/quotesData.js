@@ -4,6 +4,7 @@ import IMAGE3 from "./assets/Images/3.jpg";
 import IMAGE4 from "./assets/Images/4.jpg";
 import IMAGE5 from "./assets/Images/5.jpg";
 import IMAGE6 from "./assets/Images/6.jpg";
+import IMAGE7 from "./assets/Images/8.jpg";
 
 const quotesData = [
   "Jab aap kisi Cheez se Dur Bhaagte Ho, toh ye Duniya bhi chhoti lagne lagti hai",
@@ -12,6 +13,7 @@ const quotesData = [
   "To win any battle, first, you need to stay on the battlefield, otherwise, you are already out of it",
   "Aap kamzor nahi hai, shaayad duniya hi kuch zyaada zaalim hain",
   "Tumhe to khush hona chahye,yaad karo tm hi to kaha karte the,ALLAH mujhe sirf tera mohtaaj banana",
+  "Jab aazmaaishey barh jaaye na to samajh lena,tumhaari manzil bahout kareeb hai"
 ];
-const quotesImages = [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5,IMAGE6];
+const quotesImages = [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5, IMAGE6,IMAGE7];
 export { quotesData, quotesImages };
