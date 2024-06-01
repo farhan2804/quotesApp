@@ -85,7 +85,7 @@ const QuotesDisplay = ({
 
         {editing ? (
           <>
-            <input
+            <textarea
               className="userInput"
               type="text"
               value={editedQuote}
