@@ -7,7 +7,7 @@ import IMAGE6 from "./assets/Images/6.jpg";
 import IMAGE7 from "./assets/Images/7.jpg";
 import IMAGE8 from "./assets/Images/8.jpg";
 import IMAGE9 from "./assets/Images/9.jpg";
-
+import IMAGE10 from "./assets/Images/10.jpg";
 const quotesData = [
   "Jab aap kisi Cheez se Dur Bhaagte Ho, toh ye Duniya bhi chhoti lagne lagti hai",
   "Insaan ko apna ghum sirf tab tak bara lagta hain, jab tak wo dusron ka ghum na dekh le",
@@ -18,6 +18,7 @@ const quotesData = [
   "Jab aazmaaishey barh jaaye na to samajh lena,tumhaari manzil bahout kareeb hai",
   "Zindagi me kuch bhi 'yuhin' nahi hota, har cheez ka apna ek maqsad hota hai",
   "Agar aap ko Zindagi me har kuch aasaani se mil jaata, toh shaayad aap Zindagi se kuch bhi na seekh paate ",
+  "Insaan ki khwahish hi uski Aazmaish ban jaati hai"
 ];
 const quotesImages = [
   IMAGE1,
@@ -29,5 +30,6 @@ const quotesImages = [
   IMAGE7,
   IMAGE9,
   IMAGE8,
+  IMAGE10
 ];
 export { quotesData, quotesImages };
